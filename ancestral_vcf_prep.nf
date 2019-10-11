@@ -5,7 +5,7 @@ Fecha: OCT 10, 2019
 Version: 0.001
 Autores: Judith Ballesteros Villascán
 Descripción: Know the variants shared between data sets projects.
-GIT Repository:
+GIT Repository: https://github.com/jbv2/nf-ancestral-vcf-prep.git
 ==============================
 INITIALIZE PARAMETERS
 ==============================
