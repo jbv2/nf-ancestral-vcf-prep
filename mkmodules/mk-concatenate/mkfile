@@ -1,0 +1,10 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+#Este módulo concatena los vcf, los ordena y deja los snps únicos
+%/concatenated.vcf:Q: %/
+	echo "[DEBUG] Concatenando los archivos VCFs que radican en $prereq ; y que son $(ls $prereq)"
+	bcftools merge \
+		--merge none \
+		--output $target \
+		$prereq/*.vcf.gz

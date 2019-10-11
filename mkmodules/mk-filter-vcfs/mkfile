@@ -1,0 +1,13 @@
+MKSHELL=/bin/bash
+#Definir MKSHELL ahora debe ir siempre arriba con /bin/bash. "Todo lo que viene a continuación interprétalo con bash"
+
+#Este bloque simplifica el vcf con bcftools para hacerlo más fácilmente manipulable
+%.filtered.vcf.gz:Q: %.vcf.gz
+	echo "[DEBUG] Simplificando los vcf"
+	bcftools annotate \
+		--force --remove "FILTER,INFO" \
+		$prereq \
+	| bcftools view \
+		--min-ac 1 \
+	| bgzip > $target \
+	&& tabix -p vcf $target
