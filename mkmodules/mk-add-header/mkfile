@@ -5,6 +5,6 @@ MKSHELL=/bin/bash
 %.header.vcf.gz:Q: %.vcf.gz
 	echo "[DEBUG] Añadiendo contigs al encabezado"
 	bcftools annotate \
-		--header-lines $HEADER \
+		--header-lines header_lines.txt \
 		$prereq \
 	| bgzip > $target

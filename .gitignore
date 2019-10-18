@@ -18,5 +18,5 @@ work
 .nextflow*
 .nextflow/history
 
-
+#ignorando la referencia
 test/reference

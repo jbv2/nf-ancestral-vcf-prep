@@ -47,7 +47,6 @@ process _pre1_add_header {
     output:
      file "*.header.vcf.gz" into results_pre1_add_header
     """
-    export HEADER="${params.header_lines}"
     bash runmk.sh
     """
 }
@@ -59,16 +58,16 @@ Process for filtering vcfs
 */
 /* Prepare inputs */
 results_pre1_add_header
-  .view()
+  // .view()
   .toList()
-  .view()
+  // .view()
   .set{inputs_for_pre2}
 
 /* Load mkfiles */
 Channel
   .fromPath("mkmodules/mk-filter-vcfs/*")
     .toList()
-    .view()
+    // .view()
     .set{mkfiles_pre2}
 
 process _pre2_filter_vcfs{
@@ -100,7 +99,7 @@ Process for concatenating vcfs
 Channel
   .fromPath("mkmodules/mk-concatenate/*")
     .toList()
-    .view()
+    // .view()
     .set{mkfiles_001}
 
 process _001_concatenate_vcfs{
@@ -123,16 +122,16 @@ Process for normalizing and compressing vcf
 */
 /* Prepare inputs */
 results_001_concatenate_vcfs
-  .view()
+  // .view()
   .toList()
-  .view()
+  // .view()
   .set{inputs_for_pst1}
 /* Load mkfiles */
 
 Channel
   .fromPath("mkmodules/mk-normalize-and-compress/*")
     .toList()
-    .view()
+    // .view()
     .set{mkfiles_pst1}
 
 process _pst1_normalize_and_compress{
