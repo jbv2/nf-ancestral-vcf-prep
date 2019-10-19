@@ -2,6 +2,8 @@
 
 ## ENVIRONMENTE VARIABLES REQUIRED
 #format is: export VARNAME="value"
+#For castillo:
+#export BCFTOOLS="/home/ballesteros/programs/bcftools/bcftools"
 
 # borrar resultados de prueba anterior
 rm -fr test/results/

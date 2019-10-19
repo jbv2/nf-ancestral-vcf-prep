@@ -4,7 +4,7 @@ MKSHELL=/bin/bash
 #Este bloque simplifica el vcf con bcftools para hacerlo más fácilmente manipulable
 %.filtered.vcf.gz:Q: %.vcf.gz
 	echo "[DEBUG] Simplificando los vcf"
-	bcftools annotate \
+	$BCFTOOLS annotate \
 		--force --remove "FILTER,INFO" \
 		$prereq \
 	| bcftools view \

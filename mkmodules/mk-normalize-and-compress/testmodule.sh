@@ -3,6 +3,8 @@
 ## ENVIRONMENTE VARIABLES REQUIRED
 #format is: export VARNAME="value"
 export GENOME_REFERENCE="test/reference/Homo_sapiens_assembly19.fasta"
+#For castillo:
+#export BCFTOOLS="/home/ballesteros/programs/bcftools/bcftools"
 
 # borrar resultados de prueba anterior
 rm -r test/results/

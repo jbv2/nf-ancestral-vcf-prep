@@ -3,6 +3,8 @@
 ## ENVIRONMENTE VARIABLES REQUIRED
 #format is: export VARNAME="value"
 #export HEADER="test/reference/header_lines.txt"
+#For castillo:
+#export BCFTOOLS="/home/ballesteros/programs/bcftools/bcftools"
 # borrar resultados de prueba anterior
 rm -fr test/results/
 

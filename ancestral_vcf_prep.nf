@@ -47,6 +47,7 @@ process _pre1_add_header {
     output:
      file "*.header.vcf.gz" into results_pre1_add_header
     """
+    export BCFTOOLS="${params.bcftools}"
     bash runmk.sh
     """
 }
@@ -79,6 +80,7 @@ process _pre2_filter_vcfs{
   file "*.filtered.vcf.g*" into results_pre2_filter_vcfs
 
   """
+  export BCFTOOLS="${params.bcftools}"
   bash runmk.sh
   """
 }
@@ -111,6 +113,7 @@ process _001_concatenate_vcfs{
   file "concatenated.vcf" into results_001_concatenate_vcfs
 
   """
+  export BCFTOOLS="${params.bcftools}"
   bash runmk.sh
   """
 }
@@ -144,6 +147,7 @@ process _pst1_normalize_and_compress{
 
   """
   export GENOME_REFERENCE="${params.genome_reference}"
+  export BCFTOOLS="${params.bcftools}"
   bash runmk.sh
   """
 }
