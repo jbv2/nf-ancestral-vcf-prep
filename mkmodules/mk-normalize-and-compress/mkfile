@@ -8,6 +8,6 @@ MKSHELL=/bin/bash
 		--fasta-ref $GENOME_REFERENCE \
 		--multiallelics -any \
 		$prereq \
-	| bcftools sort \
+	| $BCFTOOLS sort \
 	| uniq \
 	| bgzip > $target
